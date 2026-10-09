@@ -1,31 +1,26 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-
-public class EventsOptions
+public class EventsOptions //Fazer desse script um "jogo utils"
 {
-    private GameManager manager;
-    private int TaxaDeSucesso;
+    private int LIMITE_DE_FALHA = 30;
 
-
-    public void Prosseguir()
+    public void Prosseguir(GameManager manager)
     {
-        Debug.Log("Prosseguindo...");
-        
+        manager.Caminhada();
     }
 
-    public void CalcularSucesso(int chance)
+    public bool CalcularSucesso(int limite, int bonus = 0) //É bool pq vai retornar se sobreviveu ou não.
     {
-        //Random random = new();
-        //TaxaDeSucesso = random.Next(chance);
+        int taxaDeSucesso = Random.Range(0, limite) + bonus;
+        Debug.Log($"Taxa de sucesso sorteada: {taxaDeSucesso}"); //vamos ver se é realmente aleatorio isso.
+        return taxaDeSucesso >= LIMITE_DE_FALHA;
+    }
 
-        //Debug.Log(TaxaDeSucesso);
-          //Console.WriteLine(taxaDeSucesso);
-          //  if (taxaDeSucesso < 30)
-          //  {
-          //      Console.Clear();
-          //      throw new Exception("O personagem foi pego pelo animal feroz!");
-          //  }
+    public void ResolverAcao(GameManager manager, int limite, int bonus, string msgSucesso, string msgFalha)
+    {
+        if (CalcularSucesso(limite, bonus))         //admito que só descobri que dá pra usar um if sem o {} graças ao Enzão (Enzo Felipe). Vivendo e aprendendo né?
+            manager.MostrarResultado(msgSucesso);
+        else
+            manager.FimDeJogo(msgFalha);
     }
 }
