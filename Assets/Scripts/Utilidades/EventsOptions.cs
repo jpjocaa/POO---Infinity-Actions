@@ -20,6 +20,7 @@ public class EventsOptions //Fazer desse script um "jogo utils"
     {
         if (CalcularSucesso(limite, bonus))         //admito que só descobri que dá pra usar um if sem o {} graças ao Enzão (Enzo Felipe). Vivendo e aprendendo né?
             manager.MostrarResultado(msgSucesso);
+            //Animations.EditarImagem(imagem, escala, posição)
         else
             manager.FimDeJogo(msgFalha);
     }
