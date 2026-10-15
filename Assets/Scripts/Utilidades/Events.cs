@@ -7,13 +7,15 @@ public class Eventos //QUE SCRIPT GRANDEEEE. Mas relaxa que a maioria é texto e
     //temos dois botões : o de sucesso (calcula o sucesso, ava) e o normal (configurarbotao), que serve para seguir em frente
     //Nota: Eu descobri da pior forma que usar while na Unity n dá certo... não tentem fazer isso, de verdade.
 
+
+
     public void EventoBoaVindas(TMP_Text mensagem, Button[] botoes, GameManager manager)
     {
         mensagem.text = "Seja bem vindo ao nosso jogo!!\nEle foi feito com muito carinho e dedicação, afinal, isso foi algo totalmente novo, então aproveite!";
         editarBotao.ConfigurarBotao(0, "Clique no botão para prosseguir", manager.IniciarJogo, botoes);
     }
 
-    public void AnimalFeroz(TMP_Text mensagem, Button[] botoes, GameManager manager)
+    public void AnimalFeroz(TMP_Text mensagem, Button[] botoes, GameManager manager, ButtonImages images)
     {
         mensagem.text = manager.TextoDeDirecao + "Oh não, eu encontrei um animal feroz!\nO que faço agora?";
 
@@ -21,7 +23,8 @@ public class Eventos //QUE SCRIPT GRANDEEEE. Mas relaxa que a maioria é texto e
         string falha = "O personagem foi pego pelo animal feroz!";
 
         //índice, texto,limite, bônus (só tem para o animal feroz), texto de sucesso, texto de falha
-        editarBotao.ConfigurarBotaoDeSucesso(0, "1- Correr para longe",             80,  0, sucesso, falha, botoes, manager);
+        editarBotao.ConfigurarBotaoDeSucesso(0, "",             80,  0, sucesso, falha, botoes, manager);
+        editarBotao.CustomizarBotao(0, images.animalFeroz[0], botoes);
         editarBotao.ConfigurarBotaoDeSucesso(1, "2- Desviar rapidamente",           60,  0, sucesso, falha, botoes, manager);
         editarBotao.ConfigurarBotaoDeSucesso(2, "3- Pular o animal",                40,  0, sucesso, falha, botoes, manager);
         editarBotao.ConfigurarBotaoDeSucesso(3, "4- Voltar silenciosamente",       100, 10, sucesso, falha, botoes, manager);

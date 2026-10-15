@@ -1024,6 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476225398}
   - component: {fileID: 476225397}
+  - component: {fileID: 476225399}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1051,6 +1052,7 @@ MonoBehaviour:
   - {fileID: 90194272}
   - {fileID: 283036937}
   mensagem: {fileID: 1270534426}
+  images: {fileID: 476225399}
 --- !u!4 &476225398
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,6 +1068,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476225399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476225396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1362a6f246ef33c4b8026f18165a058d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalFeroz:
+  - {fileID: -3851856228236618430, guid: 576a3418da346064087ebbcb851f0fe3, type: 3}
 --- !u!1 &483031510
 GameObject:
   m_ObjectHideFlags: 0

@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "POO---Infinity-Actions.slnx"
+    "dotnet.defaultSolution": "POO - Infinity Actions.slnx"
 }

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     Directions directions = new();
     ConfigButtons editarBotao = new();
 
+    [SerializeField] private ButtonImages images;
+
     //preguiçaaa
     string direcaoEscolhida ;
     int contadordeTurno = 0;
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
         switch (evento)
         {
             case OpcoesDeEvento.AnimalFeroz:    
-                events.AnimalFeroz(mensagem, botoes, this);
+                events.AnimalFeroz(mensagem, botoes, this, images);
                 break;
 
             case OpcoesDeEvento.PedraMisteriosa:

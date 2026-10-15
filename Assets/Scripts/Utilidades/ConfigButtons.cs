@@ -23,6 +23,12 @@ public class ConfigButtons //Essa classe , como o nome diz, é só para configur
 
     }
 
+    public void CustomizarBotao(int indice, Sprite imagem, Button[] botoes)
+    {
+        Button botao = botoes[indice];
+        botao.image.sprite = imagem;
+    }
+
     //Muitos parametros. Espero que vcs entendam, to com preguiça.
     public void ConfigurarBotaoDeSucesso(int indice, string texto, int limite, int bonus, string msgSucesso, string msgFalha, Button[] botoes, GameManager manager)
     {
