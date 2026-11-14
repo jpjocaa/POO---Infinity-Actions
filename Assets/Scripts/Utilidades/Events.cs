@@ -9,10 +9,11 @@ public class Eventos //QUE SCRIPT GRANDEEEE. Mas relaxa que a maioria é texto e
 
 
 
-    public void EventoBoaVindas(TMP_Text mensagem, Button[] botoes, GameManager manager)
+    public void EventoBoaVindas(TMP_Text mensagem, Button[] botoes, GameManager manager, ButtonImages images)
     {
         mensagem.text = "Seja bem vindo ao nosso jogo!!\nEle foi feito com muito carinho e dedicação, afinal, isso foi algo totalmente novo, então aproveite!";
-        editarBotao.ConfigurarBotao(0, "Clique no botão para prosseguir", manager.IniciarJogo, botoes);
+        editarBotao.ConfigurarBotao(0, "", manager.IniciarJogo, botoes);
+        editarBotao.CustomizarBotao(0, images.CaminhosSprites[0], botoes);
     }
 
     public void AnimalFeroz(TMP_Text mensagem, Button[] botoes, GameManager manager, ButtonImages images)
@@ -84,7 +85,7 @@ public class Eventos //QUE SCRIPT GRANDEEEE. Mas relaxa que a maioria é texto e
     public void NovoCaminho(TMP_Text mensagem, Button[] botoes, GameManager manager, ButtonImages images) //O mais sem graça pra ser sincero.
     {
         mensagem.text = manager.TextoDeDirecao + "Inacreditável! Encontrei um novo caminho.\nEsta parte da floresta ainda não tinha explorado...\nO que será que vou encontrar seguindo em frente?";
-        editarBotao.ConfigurarBotao(0, "Seguir em frente", manager.Caminhada, botoes);
+        editarBotao.ConfigurarBotao(0, "", manager.Caminhada, botoes);
         editarBotao.CustomizarBotao(0, images.CaminhosSprites[1], botoes);
     }
 }

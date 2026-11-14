@@ -52,11 +52,11 @@ public class GameManager : MonoBehaviour
                 break;
 
             case OpcoesDeEvento.NovoCaminho:
-                events.NovoCaminho(mensagem, botoes, this,images);
+                events.NovoCaminho(mensagem, botoes, this, images);
                 break;
 
             case OpcoesDeEvento.Boasvindas:
-                events.EventoBoaVindas(mensagem, botoes, this);
+                events.EventoBoaVindas(mensagem, botoes, this, images);
                 break;
 
             case OpcoesDeEvento.Direcoes:
@@ -108,14 +108,16 @@ public class GameManager : MonoBehaviour
     {
         EsconderBotoes();
         mensagem.text = texto;
-        editarBotao.ConfigurarBotao(0, "Continuar", Caminhada, botoes);
+        editarBotao.ConfigurarBotao(0, "", Caminhada, botoes);
+        editarBotao.CustomizarBotao(0, images.CaminhosSprites[1], this.botoes);
     }
 
     //auto explicatorio pt2
     public void FimDeJogo(string motivo)
     {
         EsconderBotoes();
-        mensagem.text = "Sua aventura durou";
-        editarBotao.ConfigurarBotao(0, "Jogar novamente", IniciarJogo, botoes);
+        mensagem.text = $"Que pena! Sua aventura durou {contadordeTurno} turnos";
+        editarBotao.ConfigurarBotao(0, "", IniciarJogo, botoes);
+        editarBotao.CustomizarBotao(0, images.CaminhosSprites[0], botoes);
     }
 }
