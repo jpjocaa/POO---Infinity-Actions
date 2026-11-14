@@ -44,15 +44,15 @@ public class GameManager : MonoBehaviour
                 break;
 
             case OpcoesDeEvento.PedraMisteriosa:
-                events.PedraMisteriosa(mensagem, botoes, this);
+                events.PedraMisteriosa(mensagem, botoes, this,images);
                 break;
 
             case OpcoesDeEvento.Abismo:
-                events.Abismo(mensagem, botoes, this);
+                events.Abismo(mensagem, botoes, this,images);
                 break;
 
             case OpcoesDeEvento.NovoCaminho:
-                events.NovoCaminho(mensagem, botoes, this);
+                events.NovoCaminho(mensagem, botoes, this,images);
                 break;
 
             case OpcoesDeEvento.Boasvindas:
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case OpcoesDeEvento.Direcoes:
-                directions.Direcoes(mensagem, botoes, this); //Unico script separado do events. Eu fiz isso pq ele é o diferentão,e pq eu tava achando o events muito grande
+                directions.Direcoes(mensagem, botoes, this, images); //Unico script separado do events. Eu fiz isso pq ele é o diferentão,e pq eu tava achando o events muito grande
                 break;
         }
     }
